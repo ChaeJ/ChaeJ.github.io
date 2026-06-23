@@ -1,9 +1,9 @@
 export const profile = {
-  name: "채재석",
-  role: "Project Leader & Solution Architect",
+  name: "PROJECT LEADER & SOLUTION ARCHITECT",
+  role: "Full-Stack Developer · Project Leader",
   period: "2008–현재",
   summary:
-    "디바이스 연동·제어부터 서비스 플랫폼, AI 에이전트까지 복잡한 기술을 자연스러운 사용자 경험으로 설계합니다.",
+    "C# · Java · JavaScript · Python\n\n서비스 플랫폼, AI 에이전트, 디바이스 제어 시스템을\n설계하고 구현하는 풀스택 개발자!!",
 };
 
 export const techGroups = [

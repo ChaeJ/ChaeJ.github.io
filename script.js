@@ -15,6 +15,73 @@ document.querySelector('.hero-role').textContent = profile.role;
 document.querySelector('.hero-summary').textContent = profile.summary;
 document.querySelector('.hero-period').textContent = profile.period;
 
+const heartLineGroup = document.querySelector('#heart-line-group');
+const heartPoints = [
+  [0, 172],
+  [34, 172],
+  [48, 164],
+  [60, 179],
+  [75, 170],
+  [89, 172],
+  [104, 172],
+  [118, 164],
+  [130, 178],
+  [144, 172],
+  [160, 172],
+  [174, 168],
+  [189, 177],
+  [204, 172],
+  [218, 172],
+  [232, 165],
+  [244, 179],
+  [258, 170],
+  [274, 172],
+  [292, 172],
+  [310, 160],
+  [324, 182],
+  [338, 170],
+  [354, 172],
+  [368, 172],
+  [382, 164],
+  [394, 179],
+  [408, 171],
+  [424, 172],
+  [440, 172],
+  [454, 168],
+  [469, 177],
+  [484, 172],
+  [498, 172],
+  [512, 164],
+  [524, 179],
+  [538, 170],
+  [554, 172],
+  [570, 172],
+  [584, 162],
+  [598, 180],
+  [612, 171],
+  [640, 172]
+];
+
+const buildHeartLineMarkup = () => heartPoints.slice(1).map((point, index) => {
+  const [x1, y1] = heartPoints[index];
+  const [x2, y2] = point;
+  const isDescending = y2 < y1;
+  const lineClass = isDescending ? 'heart-line heart-line--dim' : 'heart-line heart-line--bright';
+
+  return `
+    <polyline
+      class="${lineClass}"
+      points="${x1},${y1} ${x2},${y2}"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />`;
+}).join('');
+
+if (heartLineGroup) {
+  heartLineGroup.innerHTML = buildHeartLineMarkup();
+}
+
 document.querySelector('#capability-list').innerHTML = capabilities.map(({ icon, title, description }) => `
   <article class="capability-card">
     <span aria-hidden="true">${icon}</span>
