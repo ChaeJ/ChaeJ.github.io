@@ -733,7 +733,7 @@ a {
   }
 
   .hero h1 {
-    font-size: clamp(3.3rem, 18vw, 4.85rem);
+    font-size: clamp(1.98rem, 10.8vw, 2.91rem);
   }
 
   .section h2 {
